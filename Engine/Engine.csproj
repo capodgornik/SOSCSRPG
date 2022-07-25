@@ -50,6 +50,7 @@
     <Compile Include="Models\ItemQuantity.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Monster.cs" />
+    <Compile Include="Models\MonsterEncounter.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\QuestStatus.cs" />
