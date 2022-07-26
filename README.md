@@ -1,3 +1,3 @@
 # SOSCSRPG
 Simple RPG using C# and Visual Studio.
-Created using this tutorial: https://soscsrpg.com/
+Created by following along with this tutorial: https://soscsrpg.com/
