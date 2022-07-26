@@ -23,7 +23,7 @@ namespace Engine.Factories
             //Create the quest
             _quests.Add(new Quest(1,
                                   "Clear the herb garden",
-                                  "Defeat the snakes in the Hearbalist's garden",
+                                  "Defeat the snakes in the Herbalist's garden",
                                   itemsToComplete,
                                   25, 10,
                                   rewardItems));
