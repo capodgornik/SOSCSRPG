@@ -66,11 +66,29 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+            
+            <!--Game Messages-->
+            <Border Grid.Row="0" Grid.Column="0"
+                    Grid.RowSpan="2"
+                    BorderBrush="Gainsboro"
+                    BorderThickness="1">
+
+                <RichTextBox x:Name="GameMessages"
+                             Background="Beige"
+                             VerticalScrollBarVisibility="Auto">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
+                             
+            </Border>
 
             <!--Location Information-->
             <Border Grid.Row="0" Grid.Column="1"
