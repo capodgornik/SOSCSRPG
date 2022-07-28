@@ -17,17 +17,15 @@ namespace Engine.Models
         public int RewardExperiencePoints { get; private set; }
 
         public Monster(string name, string imageName,
-                       int maximumHitPints, int hitPoints,
+                       int maximumHitPoints, int currentHitPoints,
                        int minimumDamage, int maximumDamage,
-                       int rewardExperiencePoints, int rewardGold)
+                       int rewardExperiencePoints, int gold) :
+            base(name, maximumHitPoints, currentHitPoints, gold)
         {
-            Name = name;
             ImageName = $"/Engine;component/Images/Monsters/{imageName}";
-            CurrentHitPoints = hitPoints;
             MinimumDamage = minimumDamage;
             MaximumDamage = maximumDamage;
             RewardExperiencePoints = rewardExperiencePoints;
-            Gold = rewardGold;
         }
     }
 }
