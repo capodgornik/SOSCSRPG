@@ -52,7 +52,7 @@ namespace Engine.Models
                       int maximumHitPoints, int currentHitPoints, int gold) :
             base(name, maximumHitPoints, currentHitPoints, gold)
         {
-            CharacterClass = CharacterClass;
+            CharacterClass = characterClass;
             ExperiencePoints = experiencePoints;
             Quests = new ObservableCollection<QuestStatus>();
         }
