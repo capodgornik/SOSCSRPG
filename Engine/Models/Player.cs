@@ -13,7 +13,6 @@ namespace Engine.Models
         #region Properties
         private string _characterClass;        
         private int _experiencePoints;
-        private int _level;
         
         public string CharacterClass 
         {
@@ -28,25 +27,20 @@ namespace Engine.Models
         public int ExperiencePoints 
         { 
             get { return _experiencePoints;  }
-            set 
+            private set 
             { 
                 _experiencePoints = value;
                 OnPropertyChanged(nameof(ExperiencePoints));
+
+                SetLevelAndMaximumHitPoints();
             }
-        }
-        public int Level 
-        { 
-            get { return _level; } 
-            set
-            {
-                _level = value;
-                OnPropertyChanged(nameof(Level));
-            } 
         }
 
         public ObservableCollection<QuestStatus> Quests { get; set; }
 
         #endregion
+
+        public event EventHandler OnLeveledUp;
 
         public Player(string name, string characterClass, int experiencePoints,
                       int maximumHitPoints, int currentHitPoints, int gold) :
@@ -68,6 +62,25 @@ namespace Engine.Models
             }
 
             return true;
+        }
+
+        public void AddExperience(int experiencePoints)
+        {
+            ExperiencePoints += experiencePoints;
+        }
+
+        public void SetLevelAndMaximumHitPoints()
+        {
+            int originalLevel = Level;
+
+            Level = (ExperiencePoints / 100) + 1;
+
+            if(Level != originalLevel)
+            {
+                MaximumHitPoints = Level * 10;
+
+                OnLeveledUp?.Invoke(this, System.EventArgs.Empty);
+            }
         }
     }
 }
