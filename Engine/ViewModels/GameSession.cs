@@ -14,7 +14,9 @@ namespace Engine.ViewModels
     public class GameSession : BaseNotificationClass
     {
         public event EventHandler<GameMessageEventArgs> OnMessageRaised;
+
         #region Properties
+
         private Player _currentPlayer;
         private Location _currentLocation;
         private Monster _currentMonster;
@@ -118,7 +120,7 @@ namespace Engine.ViewModels
 
         public GameSession()
         {
-            CurrentPlayer = new Player("Scott", "Fighter", 0, 10, 10, 1000000);
+            CurrentPlayer = new Player("Celine", "Fighter", 0, 10, 10, 1000000);
 
             if (!CurrentPlayer.Weapons.Any())
             {
