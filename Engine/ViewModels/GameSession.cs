@@ -331,7 +331,7 @@ namespace Engine.ViewModels
             CurrentPlayer.ReceiveGold(CurrentMonster.Gold);
             foreach (GameItem gameItem in CurrentMonster.Inventory)
             {
-                RaiseMessage($"You receive one {gameItem.Name}.");
+                RaiseMessage($"You receive 1 {gameItem.Name}.");
                 CurrentPlayer.AddItemToInventory(gameItem);
             }
         }
