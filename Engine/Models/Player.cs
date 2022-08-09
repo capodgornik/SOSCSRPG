@@ -15,7 +15,7 @@ namespace Engine.Models
         
         public string CharacterClass 
         {
-            get { return _characterClass; } 
+            get => _characterClass; 
             set
             {
                 _characterClass = value;
@@ -25,7 +25,7 @@ namespace Engine.Models
 
         public int ExperiencePoints 
         { 
-            get { return _experiencePoints;  }
+            get => _experiencePoints;
             private set 
             { 
                 _experiencePoints = value;
@@ -44,8 +44,8 @@ namespace Engine.Models
         public event EventHandler OnLeveledUp;
 
         public Player(string name, string characterClass, int experiencePoints,
-                      int maximumHitPoints, int currentHitPoints, int gold) :
-            base(name, maximumHitPoints, currentHitPoints, gold)
+                      int maximumHitPoints, int currentHitPoints, int dexterity, int gold) :
+            base(name, maximumHitPoints, currentHitPoints, dexterity, gold)
         {
             CharacterClass = characterClass;
             ExperiencePoints = experiencePoints;
