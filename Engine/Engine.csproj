@@ -46,6 +46,7 @@
     <Compile Include="Actions\Heal.cs" />
     <Compile Include="Actions\IAction.cs" />
     <Compile Include="BaseNotificationClass.cs" />
+    <Compile Include="EventArgs\CombatVictoryEventArgs.cs" />
     <Compile Include="EventArgs\GameMessageEventArgs.cs" />
     <Compile Include="Factories\ItemFactory.cs" />
     <Compile Include="Factories\MonsterFactory.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Factories\RecipeFactory.cs" />
     <Compile Include="Factories\TraderFactory.cs" />
     <Compile Include="Factories\WorldFactory.cs" />
+    <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\GameItem.cs" />
     <Compile Include="Models\GroupedInventoryItem.cs" />
     <Compile Include="Models\Inventory.cs" />
