@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Engine.Services;
+using Newtonsoft.Json;
 
 namespace Engine.Models
 {
@@ -131,7 +132,9 @@ namespace Engine.Models
             }
         }
 
+        [JsonIgnore]
         public bool IsAlive => CurrentHitPoints > 0;
+        [JsonIgnore]
         public bool IsDead => !IsAlive;
         
         #endregion
