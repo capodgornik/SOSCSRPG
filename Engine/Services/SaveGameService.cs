@@ -14,17 +14,16 @@ namespace Engine.Services
 {
     public static class SaveGameService
     {
-        private const string SAVE_GAME_FILE_NAME = "SOSCRPG.json";
 
-        public static void Save(GameSession gameSession)
+        public static void Save(GameSession gameSession, string filename)
         {
-            File.WriteAllText(SAVE_GAME_FILE_NAME,
+            File.WriteAllText(filename,
                               JsonConvert.SerializeObject(gameSession, Formatting.Indented));
         }
 
-        public static GameSession LoadLastSaveOrCreateNew()
+        public static GameSession LoadLastSaveOrCreateNew(string filename)
         {
-            if (!File.Exists(SAVE_GAME_FILE_NAME))
+            if (!File.Exists(filename))
             {
                 return new GameSession();
             }
@@ -32,7 +31,7 @@ namespace Engine.Services
             // Save game file exists, so create the GameSession object from it.
             try
             {
-                JObject data = JObject.Parse(File.ReadAllText(SAVE_GAME_FILE_NAME));
+                JObject data = JObject.Parse(File.ReadAllText(filename));
                 // Populate Player object
                 Player player = CreatePlayer(data);
                 int x = (int)data[nameof(GameSession.CurrentLocation)][nameof(Location.XCoordinate)];
